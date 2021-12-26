@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+//namespace where the interface will be implemented.
+option csharp_namespace = "GetUserInfoService";
+
+//package specifier prevents name clashes between protocol message types.
+package GetUserInfo;
+
+
+service UserInfo {
+  
+  rpc GetUserNameByID (GetUserByIDRequest) returns (GetUserByIDReply);
+}
+
+// The request message containing the user's id.
+message GetUserByIDRequest {
+  int32 id = 1;
+}
+
+// The response message containing the user name.
+message GetUserByIDReply {
+  string name = 1;
+}
